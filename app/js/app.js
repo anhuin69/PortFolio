@@ -10,7 +10,9 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/education', {templateUrl: 'partials/education.html', controller: 'MainController'});
+  $routeProvider.when('/skills', {templateUrl: 'partials/skills.html', controller: 'SkillsController'});
+  $routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: 'MainController'});
+  $routeProvider.when('/work', {templateUrl: 'partials/work.html', controller: 'MainController'});
+  $routeProvider.otherwise({redirectTo: '/skills'});
 }]);

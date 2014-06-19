@@ -1,0 +1,36 @@
+<div id="header">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a id="logo" href="#/skills">
+				<img src="img/logo-white.png" alt="Fabrice Bascoulergue">
+			</a>
+    	</div>
+
+		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+			<ul class="nav navbar-nav" ng-controller="navCtrl">
+				<li><a ng-class="{ active: isActive('/skills')}" href="#/skills">Home</a></li>
+				<li><a ng-class="{ active: isActive('/work')}" href="#/work">Work</a></li>
+				<li><a ng-class="{ active: isActive('/education')}" href="#/education">Education</a></li>
+				<li><a ng-class="{ active: isActive('/projects')}" href="#/projects">Projects</a></li>
+	      	</ul>
+	      	<ul class="nav navbar-nav navbar-right">
+	      		<li>
+	      			<a href="https://github.com/anhuin69" target="_blank">
+	      				<img class="connect-logo" src="img/github-logo-32.png" alt="Github Fabrice Bascoulergue">
+	      			</a>
+	      		</li>
+	      		<li>
+	      			<a href="https://www.linkedin.com/pub/fabrice-bascoulergue/4b/543/334" target="_blank">
+	      				<img class="connect-logo" src="img/linkedin-logo-32.png" alt="Linkedin Fabrice Bascoulergue">
+	      			</a>
+	      		</li>
+	      	</ul>
+    	</nav>
+	</div>
+</div>
