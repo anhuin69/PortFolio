@@ -4,11 +4,14 @@
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
+  'ngAnimate',
+  'angularCharts',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.controllers'
 ]).
+
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/education', {templateUrl: 'partials/education.html', controller: 'MainController'});
   $routeProvider.when('/skills', {templateUrl: 'partials/skills.html', controller: 'SkillsController'});

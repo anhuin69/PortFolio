@@ -1,0 +1,23 @@
+<div ng-controller="SkillsController">
+	<h1 class="text-center">Mobile</h1>
+	<div class="col-sm-12 skill-container bracket-left">
+		<table style="width: 100%;">
+			<thead>
+				<th style="width: 172px"></th>
+				<th></th>
+			</thead>
+			<tbody>
+		        <tr ng-repeat="item in mobileSkills">
+		        	<td>
+		            	<h2>{{item.name}}<h2>
+		            </td>
+		            <td>
+		            	<div class="progress progress-flat">
+					    	<div class="progress-bar" style="width: {{item.progress}};"></div>
+					    </div>
+		            </td>
+		        </tr>
+		    </tbody>
+	    </table>
+	</div>
+</div>

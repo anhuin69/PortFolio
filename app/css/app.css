@@ -26,6 +26,7 @@ h1, h2 {
   left: 0;
   width: 100%;
   margin-bottom: 12px;
+  z-index: 100;
 }
 
 #header a {
@@ -110,4 +111,56 @@ h1, h2 {
 
 .progress-flat .progress-bar {
   background: #1abc9c;
+}
+
+.svg-pie-chart-label {
+  fill: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.no-selection-allowed {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.slide-animate-container {
+  position:relative;
+  background:white;
+  overflow:visible;
+  height: 10px;
+}
+
+.slide-animate {
+  z-index: 1;
+}
+
+.slide-animate.ng-enter, .slide-animate.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:block;
+}
+
+.slide-animate.ng-enter {
+  left:1200px;
+}
+.slide-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+
+.slide-animate.ng-leave {
+  opacity:1;
+}
+.slide-animate.ng-leave.ng-leave-active {
+  opacity:0;
 }
