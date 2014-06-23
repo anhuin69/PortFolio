@@ -1,15 +1,17 @@
 <div class="container">
-	<div class="row">
-		<div class="col-sm-4">
-			<div style="position: absolute; width: 33%; top: 38%; left:33%">
-				<h2 class="text-center no-selection-allowed" style="color: {{selectedView.color}};">{{selectedView.title}}</h2>
-			</div>
-			<div ac-chart="pieType" ac-data="pieData" ac-config="pieConfig" id='chart' class='chart' 
-				 style="width: 100%; height: 360px; -webkit-transform: rotate({{selectedView.angle}}deg); -webkit-transition:1s;">
+	<div class="row" style="position: relative;">
+		<div class="col-lg-4 col-lg-offset-4" style="z-index: 10;">
+			<div class="col-lg-8 col-lg-offset-2">
+				<div style="position: absolute; width: 50%; top: 38%; left:25%">
+					<h2 class="text-center no-selection-allowed" style="color: {{selectedView.color}};">{{selectedView.title}}</h2>
+				</div>
+				<div ac-chart="pieType" ac-data="pieData" ac-config="pieConfig" id='chart' class='chart' 
+					 style="width: 100%; height: 290px; -webkit-transform: rotate({{selectedView.angle}}deg); -webkit-transition:1s;">
+				</div>
 			</div>
 		</div>
-		<div class="col-sm-8 slide-animate-container">
-			<div class="slide-animate" data-ng-include="selectedView.path"></div>
+		<div style="position: absolute; top: 80%; width: 100%; height: 500px;">
+			<div id="tree-container"></div>
 		</div>
 	</div>
 </div>

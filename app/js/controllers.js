@@ -6,8 +6,7 @@ angular.module('myApp.controllers', [])
 	.controller('MainController', ['$scope', function ($scope) {
   
   	}])
-  	.controller('SkillsController', ['$scope', function ($scope) {
-
+  .controller('SkillsController', ['$scope', function ($scope) {
   		$scope.softwareSkills = [
   			{"name": "C", "progress": "100%"},
   			{"name": "C++", "progress": "100%"},
@@ -26,18 +25,11 @@ angular.module('myApp.controllers', [])
   			{"name": "IOS", "progress": "5%"}
   		];
 
-      $scope.selectedView = {
-        path: "partials/skills-mobile.html",
-        title: "Mobile",
-        angle: "0",
-        color: "#f1c40f"
-      };
-
       $scope.pieType = "pie";
 
       $scope.pieConfig = {
           labels: true,
-          innerRadius: '80%',
+          innerRadius: '70%',
           tooltips: false,
           colors: ["#f1c40f", "#e67e22", "#2980b9"],
           labelClass: 'svg-pie-chart-label',
@@ -50,6 +42,7 @@ angular.module('myApp.controllers', [])
             for (var i = 0; i < $scope.pieData.data.length; i++) {
               if (d.data.view == $scope.pieData.data[i].view) {
                 $scope.selectedView.color = $scope.pieConfig.colors[i];
+                $scope.selectedView.skillTree = $scope.pieData.data[i].tree;
                 $scope.pieData.data[i].y = [2];
               }
               else {
@@ -71,27 +64,62 @@ angular.module('myApp.controllers', [])
         data : [{
               view: "mobile",
               title: "Mobile",
-              angle: 0,
+              angle: 90,
               x: [""],
-              y: [2]
+              y: [2],
+              tree: [
+                {"name": "Android"},
+                {"name": "IOS"}
+              ]
             },
             {
               view: "software",
               title: "Software",
-              angle: 270,
+              angle: 0,
               x: [""],
-              y: [1]
+              y: [1],
+              tree: [
+                {"name": "C"},
+                {"name": "C++"},
+                {"name": "Java"},
+                {"name": ".NET"}
+              ]
             },
             {
               view: "web",
-              title: "Web & Scripting",
-              angle: 180,
+              title: "Web",
+              angle: 270,
               x: [""],
-              y: [1]
+              y: [1],
+              tree: [
+                {"name": "Ruby", "children": [
+                  {"name": "Rails", "children": [
+                    {"name": "RESTful API"},
+                    {"name": "Google APIs", "children": [
+                      {"name": "Places"},
+                      {"name": "Google+"}
+                    ]},
+                    {"name": "Facebook Graph API"}
+                  ]}
+                ]},
+                {"name": "Javascript", "children": [
+                  {"name": "Angular JS"}
+                ]},
+                {"name": "PHP"},
+                {"name": "SQL"}
+              ]
             }]     
       };
 
-     
+      $scope.selectedView = {
+        path: "partials/skills-" + $scope.pieData.data[0].view + ".html",
+        title: $scope.pieData.data[0].title,
+        angle: $scope.pieData.data[0].angle,
+        color: $scope.pieConfig.colors[0],
+        skillTree: $scope.pieData.data[0].tree
+      };
+
+      createTree();
 
   	}])
 	.controller('navCtrl', ['$scope', '$location', function ($scope, $location) {
