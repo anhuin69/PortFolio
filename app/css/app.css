@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
   /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
   font-size: 14px;
   line-height: 1.42857143;
@@ -82,100 +82,120 @@ h1, h2 {
   transform: rotate(-90deg);
 }
 
-.skill-container {
-  padding-bottom: 14px;
-  padding-top: 14px;
-  padding-left: 32px;
+.background-smartphone {
+  min-height: 300px;
+  background-image: url(../img/smartphone.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding-left: 256px;
 }
 
-.bracket-left {
-  background-image: url(../img/bracket-left.png);
+.skill-tile {
+  position: relative;
+  float: left;
+  display: block;
+  width: 142px;
+  height: 142px;
+  background-image: url(../img/tile.png);
   background-repeat: no-repeat;
-  background-size: 32px 100%;
+  background-size: 100% auto;
 }
 
-.bracket-right {
-  background-image: url(../img/bracket-right.png);
-  background-repeat: no-repeat;
-  background-size: 32px 100%;
-  background-position: right;
+.skill-tile img {
+  position: absolute;
+  width: auto;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+}
+
+.skill-tile h1 {
+  position: absolute;
+  margin-top: 0;
+  left: 48px;
+  top: 44px;
 }
 
 .skill-list {
-  list-style-type: none;
+  position: relative;
+  float: left;
+  display: block;
+  padding-top: 42px;
+  color: #415b76;
+  font-size: 13px;
 }
 
-.progress-flat {
+.progress {
+  height: 8px;
   margin-bottom: 0;
+  border-radius: 0px;
+  border: 1px solid #E0E0E0;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
 }
 
-.progress-flat .progress-bar {
-  background: #1abc9c;
+.progress-bar {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: fadeInLeft;/*bounceInLeft;*/
 }
 
-.svg-pie-chart-label {
-  fill: white;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+.progress-fill-orange > .progress-bar{
+  background: -moz-linear-gradient(left,  rgba(247,152,0,1) 0%, rgba(237,196,139,0.98) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(247,152,0,1)), color-stop(100%,rgba(237,196,139,0.98))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(247,152,0,1) 0%,rgba(237,196,139,0.98) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(247,152,0,1) 0%,rgba(237,196,139,0.98) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(247,152,0,1) 0%,rgba(237,196,139,0.98) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(247,152,0,1) 0%,rgba(237,196,139,0.98) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f79800', endColorstr='#faedc48b',GradientType=1 ); /* IE6-9 */
 }
 
-.no-selection-allowed {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.progress-fill-yellow > .progress-bar{
+  background: -moz-linear-gradient(left,  rgba(247,210,0,1) 0%, rgba(239,234,139,0.89) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(247,210,0,1)), color-stop(100%,rgba(239,234,139,0.89))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(247,210,0,1) 0%,rgba(239,234,139,0.89) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(247,210,0,1) 0%,rgba(239,234,139,0.89) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(247,210,0,1) 0%,rgba(239,234,139,0.89) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(247,210,0,1) 0%,rgba(239,234,139,0.89) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7d200', endColorstr='#e3efea8b',GradientType=1 ); /* IE6-9 */
 }
 
-.slide-animate-container {
-  position:relative;
-  background:white;
-  overflow:visible;
-  height: 10px;
+.progress-fill-green > .progress-bar{
+  background: -moz-linear-gradient(left,  rgba(40,137,11,1) 0%, rgba(90,153,73,0.87) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(40,137,11,1)), color-stop(100%,rgba(90,153,73,0.87))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(40,137,11,1) 0%,rgba(90,153,73,0.87) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(40,137,11,1) 0%,rgba(90,153,73,0.87) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(40,137,11,1) 0%,rgba(90,153,73,0.87) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(40,137,11,1) 0%,rgba(90,153,73,0.87) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28890b', endColorstr='#de5a9949',GradientType=1 ); /* IE6-9 */
 }
 
-.slide-animate {
-  z-index: 1;
+.page-view.ng-enter, .page-view.ng-leave {
+  -webkit-animation-duration: 1.2s;
+  -webkit-animation-fill-mode: both;
 }
 
-.slide-animate.ng-enter, .slide-animate.ng-leave {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s;
-
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  display:block;
+.page-view.ng-enter > .page-content, 
+.page-view.ng-leave > .page-content
+{
+  position: absolute;
 }
 
-.slide-animate.ng-enter {
-  left:1200px;
-}
-.slide-animate.ng-enter.ng-enter-active {
-  left:0;
+.page-view-left.ng-enter {
+  -webkit-animation-name: fadeInLeftBig;
 }
 
-.slide-animate.ng-leave {
-  opacity:1;
-}
-.slide-animate.ng-leave.ng-leave-active {
-  opacity:0;
+.page-view-left.ng-leave {
+  -webkit-animation-name: fadeOutRightBig;
 }
 
-/* test */
-.node circle {
-   fill: #fff;
-   stroke: steelblue;
-   stroke-width: 3px;
- }
+.page-view-right.ng-enter {
+  -webkit-animation-name: fadeInRightBig;
+}
 
- .node text { font: 12px sans-serif; }
-
- .link {
-   fill: none;
-   stroke: #ccc;
-   stroke-width: 2px;
- }
+.page-view-right.ng-leave {
+  -webkit-animation-name: fadeOutLeftBig;
+}

@@ -5,7 +5,7 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
-  'angularCharts',
+  'ui.bootstrap',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
@@ -13,9 +13,9 @@ angular.module('myApp', [
 ]).
 
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/education', {templateUrl: 'partials/education.html', controller: 'MainController'});
   $routeProvider.when('/skills', {templateUrl: 'partials/skills.html', controller: 'SkillsController'});
-  $routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: 'MainController'});
   $routeProvider.when('/work', {templateUrl: 'partials/work.html', controller: 'MainController'});
+  $routeProvider.when('/education', {templateUrl: 'partials/education.html', controller: 'MainController'});
+  $routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: 'MainController'});
   $routeProvider.otherwise({redirectTo: '/skills'});
 }]);
